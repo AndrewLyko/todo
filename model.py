@@ -34,6 +34,22 @@ def add_todo(tasks, title, duration=60):
     tasks.append(todo)
 
 
+def find_todo_by_id(tasks, idx):
+    for task in tasks:
+        if task["id"] == idx:
+            return task
+
+
+def toggle_status(tasks, idx):
+    task = find_todo_by_id(tasks, idx)
+    task["status"] = not task["status"]
+
+
+def delete_todo(tasks, idx):
+    task = find_todo_by_id(tasks, idx)
+    tasks.remove(task)
+
+
 # add_todo(todos, "cut")
 # add_todo(todos, "cut")
 # add_todo(todos, "cut")
